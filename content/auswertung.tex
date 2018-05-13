@@ -1,8 +1,39 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 \subsection{Bestimmung der Strömungsgeschwindigkeit}
-Die für $\Delta\nu$ gemessenen Werte sind in Tabelle eingetragen.
-Die Geschwindigkeit für die Entsprechenden Frequenzverschiebungen wurde mithilfe von Gleichung\eqref{eq:geschw}, gemäß
+
+Der Innendurchmesser des Rohrs bertägt $d = 10\si{\milli\meter}$.
+Die für $\Delta\nu$ gemessenen Werte sind in Tabelle\ref{tab} eingetragen.
+Dabei werden die Frequenzverschiebungen als Beträge angegeben.
+\begin{table}[H]
+    \caption{Frequenzänderungen bei Verschiedenen Prismenwinkeln.}
+    \label{tab:freq1}
+    \centering
+    \begin{tabular}{S[table-format=2] S[table-format=2.2(0)e0] S[table-format=2.2(0)e0]  }
+        \toprule
+        {$\theta/\si{\degree}$} & {$\Delta\nu/\si{\hertz}$} &{$v/\si{\meter\per\second}$} \\
+        \midrule
+             15 & 110 & 0.29\\
+             15 & 171 & 0.46\\
+             15 & 208 & 0.54\\
+             15 & 220 & 0.57\\
+             15 & 220 & 0.57\\
+             30 & 220 & 0.29\\
+             30 & 287 & 0.39\\
+             30 & 305 & 0.41\\
+             30 & 385 & 0.52\\
+             30 & 385 & 0.52\\
+             60 & 305 & 0.24\\
+             60 & 433 & 0.34\\
+             60 & 531 & 0.41\\
+             60 & 433 & 0.34\\
+             60 & 647 & 0.50\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\noindent
+
+Die Geschwindigkeit für die Entsprechenden Frequenzverschiebungen werden mithilfe von Gleichung\eqref{eq:geschw}, gemäß
 
 \begin{equation}
   v= \frac{c\cdot\Delta\nu}{2\cdot\nu_0\cos{\alpha}}
@@ -13,6 +44,22 @@ Die Dopplerwinkel werden wie folgt berechnet:
   \alpha = 90\si{\degree} - \arcsin(\sin(\theta )\cdot \frac{c_L}{c_P})
 \end{equation}
 Die erhaltenen Werte sind in Tabelle eingetragen.
+\begin{table}[H]
+    \caption{Dopplerwinkel.}
+    \label{tab:dopp}
+    \centering
+    \begin{tabular}{S[table-format=2] S[table-format=2.2(0)e0]  }
+        \toprule
+        {$\theta/\si{\degree}$} & {$\alpha/\si{\degree}$}  \\
+        \midrule
+             15 & 80.06 \\
+             30 & 70.53\\
+             60 & 54.74\\
+
+        \bottomrule
+    \end{tabular}
+\end{table}
+\noindent
 
 In Abbildung sind die Geschwindigkeiten gegen den Quotienten aus gemssener Frequenzänderung und dem Kosinus des jeweiligen Dopplerwinkels aufgetragen.
 Zudem wird mit SciPy eine lineare Regression mit
@@ -20,5 +67,28 @@ Zudem wird mit SciPy eine lineare Regression mit
   f(x)= mx + b
 \end{equation}
 durgeführt.
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/15.pdf}
+  \caption{Frequenzverschiebung in Abhängigkeit der Geschwindigkeit.}
+  \label{fig:1mm}
+\end{figure}
+Die so erhaltenen Parameter sind in Tabelle\ref{tab:par1} aufgetragen.
+\begin{table}[H]
+    \caption{Parameter der regressions Rechnung.}
+    \label{tab:par1}
+    \centering
+    \begin{tabular}{S[table-format=2] S[table-format=4.8(8)e0] S[table-format=1.2(2)e0] }
+        \toprule
+        {$\theta/\si{\degree}$} & {$m/\si{\per\meter}$} & {$b\cdot10^-6/\si{\per\second}$}  \\
+        \midrule
+             15 &  2222.2222146\pm0.0000011 & 12.70\pm1.80 \\
+             30 &  2222.2222269\pm0.0000006 & -4.4\pm0.40 \\
+             60 &  2222.2222289\pm0.0000012 & -6.3\pm0.70 \\
+
+        \bottomrule
+    \end{tabular}
+\end{table}
+\noindent
 
 \subsection{Bestimmung des Strömungsprofils}
