@@ -36,14 +36,14 @@ Dabei werden die Frequenzverschiebungen als Beträge angegeben.
 Die Geschwindigkeit für die Entsprechenden Frequenzverschiebungen werden mithilfe von Gleichung\eqref{eq:geschw}, gemäß
 
 \begin{equation}
-  v= \frac{c\cdot\Delta\nu}{2\cdot\nu_0\cos{\alpha}}
+  v= \frac{c\cdot\symup\Delta\nu}{2\cdot\nu_0\cos{\alpha}}
 \end{equation}
 berechnet.
 Die Dopplerwinkel werden wie folgt berechnet:
 \begin{equation}
-  \alpha = 90\si{\degree} - \arcsin(\sin(\theta )\cdot \frac{c_L}{c_P})
+  \alpha = 90\si{\degree} - \arcsin\left(\sin(\theta )\cdot \frac{c_L}{c_P}\right)
 \end{equation}
-Die erhaltenen Werte sind in Tabelle eingetragen.
+Die erhaltenen Werte sind in Tabelle \ref{tab:dopp} eingetragen.
 \begin{table}[H]
     \caption{Dopplerwinkel.}
     \label{tab:dopp}
@@ -60,13 +60,111 @@ Die erhaltenen Werte sind in Tabelle eingetragen.
     \end{tabular}
 \end{table}
 \noindent
+=======
+Die erhaltenen Werte sind in Tabellen \ref{tab:15}, \ref{tab:30} und \ref{tab:60} eingetragen.
+>>>>>>> auswertungsteil 1 korregiert, soweit möglich. schriftbild optimiert
 
-In Abbildung sind die Geschwindigkeiten gegen den Quotienten aus gemssener Frequenzänderung und dem Kosinus des jeweiligen Dopplerwinkels aufgetragen.
+%tabelle
+
+
+\begin{table}
+    \centering
+    \caption{Messwerte für einen Winkel von $\alpha = \SI{15}{\degree}$.}
+    \label{tab:15}
+    \begin{tabular}{S[table-format=4.0] S[table-format=3.0]}
+        \toprule
+        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu$} \\
+        \midrule
+		
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \centering
+    \caption{Messwerte für einen Winkel von $\alpha = \SI{30}{\degree}$.}
+    \label{tab:30}
+    \begin{tabular}{S[table-format=4.0] S[table-format=3.0]}
+        \toprule
+        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu$} \\
+        \midrule
+3120  & 220\\
+3660  & 287\\
+4200  & 305\\
+4750  & 385\\
+5290  & 385\\
+3110  & 415\\
+3650  & 458\\
+4180  & 623\\
+4750  & 580\\
+5300  & 830\\
+3110  & 92\\
+3660  & 122\\
+4200  & 134\\
+4760  & 171\\
+5300  & 195\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \centering
+    \caption{Messwerte für einen Winkel von $\alpha = \SI{60}{\degree}$.}
+    \label{tab:60}
+    \begin{tabular}{S[table-format=4.0] S[table-format=3.0]}
+        \toprule
+        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu$} \\
+        \midrule
+3120  & 305\\
+3660  & 433\\
+4200  & 531\\
+4750  & 433\\
+5290  & 647\\
+3110  & 525\\
+3650  & 702\\
+4180  & 830\\
+4750  & 1001\\
+5300  & 1172\\
+3110  & 134\\
+3660  & 183\\
+4200  & 220\\
+4760  & 256\\
+5300  & 281\\		
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/15.pdf}
+  \caption{Lineare Ausgleichsgerade durch die Messwerte zum Winkel $\alpha = \SI{15}{\degree}$.}
+  \label{fig:15}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/30.pdf}
+  \caption{Lineare Ausgleichsgerade durch die Messwerte zum Winkel $\alpha = \SI{30}{\degree}$.}
+  \label{fig:30}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/60.pdf}
+  \caption{Lineare Ausgleichsgerade durch die Messwerte zum Winkel $\alpha = \SI{60}{\degree}$.}
+  \label{fig:60}
+\end{figure}
+
+
+
+In Abbildung \ref{fig:15}, \ref{fig:30} und \ref{fig:60} sind die Geschwindigkeiten gegen den Quotienten aus gemessener Frequenzänderung und dem Cosinus des jeweiligen 
+Dopplerwinkels aufgetragen.
 Zudem wird mit SciPy eine lineare Regression mit
 \begin{equation}
   f(x)= mx + b
 \end{equation}
 durgeführt.
+<<<<<<< HEAD
 \begin{figure}[H]
   \centering
   \includegraphics{build/15.pdf}
@@ -90,5 +188,33 @@ Die so erhaltenen Parameter sind in Tabelle\ref{tab:par1} aufgetragen.
     \end{tabular}
 \end{table}
 \noindent
+=======
+Es ergeben sich folgende Fit-Parameter:
+\begin{align*}
+	\alpha = \SI{15}{\degree} 	& \\
+								& \text{Rohrdurchmesser}=\SI{7}{\milli\meter} 	& m=&\SI{999}{\hertz\per RPM}\\
+								&												& b=&\SI{999}{\hertz}\\
+								& \text{Rohrdurchmesser}=\SI{10}{\milli\meter} 	& m=&\SI{0.72\pm0.05}{\hertz\per RPM}\\
+								&												& b=&\SI{-830\pm230}{\hertz}\\
+								& \text{Rohrdurchmesser}=\SI{16}{\milli\meter} 	& m=&\SI{0.130\pm0.001}{\hertz\per RPM}\\
+								&												& b=&\SI{19\pm5}{\hertz}\\
+	\alpha = \SI{30}{\degree} 	& \\
+								& \text{Rohrdurchmesser}=\SI{7}{\milli\meter} 	& m=&\SI{0.24\pm0.04}{\hertz\per RPM}\\
+								&												& b=&\SI{-50\pm160}{\hertz}\\
+								& \text{Rohrdurchmesser}=\SI{10}{\milli\meter} 	& m=&\SI{0.52\pm0.13}{\hertz\per RPM}\\
+								&												& b=&\SI{-400\pm500}{\hertz}\\
+								& \text{Rohrdurchmesser}=\SI{16}{\milli\meter} 	& m=&\SI{0.14\pm0.01}{\hertz\per RPM}\\
+								&												& b=&\SI{-160\pm40}{\hertz}\\
+	\alpha = \SI{60}{\degree} 	& \\
+								& \text{Rohrdurchmesser}=\SI{7}{\milli\meter} 	& m=&\SI{0.22\pm0.08}{\hertz\per RPM}\\
+								&												& b=&\SI{-100\pm340}{\hertz}\\
+								& \text{Rohrdurchmesser}=\SI{10}{\milli\meter} 	& m=&\SI{0.50\pm0.01}{\hertz\per RPM}\\
+								&												& b=&\SI{-650\pm50}{\hertz}\\
+								& \text{Rohrdurchmesser}=\SI{16}{\milli\meter} 	& m=&\SI{0.12\pm0.01}{\hertz\per RPM}\\
+								&												& b=&\SI{-116\pm33}{\hertz}\\
+\end{align*}
+
+
+>>>>>>> auswertungsteil 1 korregiert, soweit möglich. schriftbild optimiert
 
 \subsection{Bestimmung des Strömungsprofils}
