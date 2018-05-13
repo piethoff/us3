@@ -1,2 +1,24 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Bestimmung der Strömungsgeschwindigkeit}
+Die für $\Delta\nu$ gemessenen Werte sind in Tabelle eingetragen.
+Die Geschwindigkeit für die Entsprechenden Frequenzverschiebungen wurde mithilfe von Gleichung\eqref{eq:geschw}, gemäß
+
+\begin{equation}
+  v= \frac{c\cdot\Delta\nu}{2\cdot\nu_0\cos{\alpha}}
+\end{equation}
+berechnet.
+Die Dopplerwinkel werden wie folgt berechnet:
+\begin{equation}
+  \alpha = 90\si{\degree} - \arcsin(\sin(\theta )\cdot \frac{c_L}{c_P})
+\end{equation}
+Die erhaltenen Werte sind in Tabelle eingetragen.
+
+In Abbildung sind die Geschwindigkeiten gegen den Quotienten aus gemssener Frequenzänderung und dem Kosinus des jeweiligen Dopplerwinkels aufgetragen.
+Zudem wird mit SciPy eine lineare Regression mit
+\begin{equation}
+  f(x)= mx + b
+\end{equation}
+durgeführt.
+
+\subsection{Bestimmung des Strömungsprofils}
