@@ -2,43 +2,7 @@
 \label{sec:Auswertung}
 \subsection{Bestimmung der Strömungsgeschwindigkeit}
 
-Der Innendurchmesser des Rohrs bertägt $d = 10\si{\milli\meter}$.
-Die für $\Delta\nu$ gemessenen Werte sind in Tabelle\ref{tab:freq1} eingetragen.
-Dabei werden die Frequenzverschiebungen als Beträge angegeben.
-\begin{table}[H]
-    \caption{Frequenzänderungen bei Verschiedenen Prismenwinkeln.}
-    \label{tab:freq1}
-    \centering
-    \begin{tabular}{S[table-format=2] S[table-format=2.2(0)e0] S[table-format=2.2(0)e0]  }
-        \toprule
-        {$\theta/\si{\degree}$} & {$\Delta\nu/\si{\hertz}$} &{$v/\si{\meter\per\second}$} \\
-        \midrule
-             15 & 110 & 0.29\\
-             15 & 171 & 0.46\\
-             15 & 208 & 0.54\\
-             15 & 220 & 0.57\\
-             15 & 220 & 0.57\\
-             30 & 220 & 0.29\\
-             30 & 287 & 0.39\\
-             30 & 305 & 0.41\\
-             30 & 385 & 0.52\\
-             30 & 385 & 0.52\\
-             60 & 305 & 0.24\\
-             60 & 433 & 0.34\\
-             60 & 531 & 0.41\\
-             60 & 433 & 0.34\\
-             60 & 647 & 0.50\\
-        \bottomrule
-    \end{tabular}
-\end{table}
-\noindent
 
-Die Geschwindigkeit für die Entsprechenden Frequenzverschiebungen werden mithilfe von Gleichung\eqref{eq:geschw}, gemäß
-
-\begin{equation}
-  v= \frac{c\cdot\symup\Delta\nu}{2\cdot\nu_0\cos{\alpha}}
-\end{equation}
-berechnet.
 Die Dopplerwinkel werden wie folgt berechnet:
 \begin{equation}
   \alpha = 90\si{\degree} - \arcsin\left(\sin(\theta )\cdot \frac{c_L}{c_P}\right)
@@ -60,9 +24,9 @@ Die erhaltenen Werte sind in Tabelle \ref{tab:dopp} eingetragen.
     \end{tabular}
 \end{table}
 \noindent
-=======
-Die erhaltenen Werte sind in Tabellen \ref{tab:15}, \ref{tab:30} und \ref{tab:60} eingetragen.
->>>>>>> auswertungsteil 1 korregiert, soweit möglich. schriftbild optimiert
+
+Die erhaltenen Werte der Messung sind in Tabellen \ref{tab:15}, \ref{tab:30} und \ref{tab:60} eingetragen.
+
 
 %tabelle
 
@@ -75,7 +39,7 @@ Die erhaltenen Werte sind in Tabellen \ref{tab:15}, \ref{tab:30} und \ref{tab:60
         \toprule
         {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu$} \\
         \midrule
-		
+
         \bottomrule
     \end{tabular}
 \end{table}
@@ -129,7 +93,7 @@ Die erhaltenen Werte sind in Tabellen \ref{tab:15}, \ref{tab:30} und \ref{tab:60
 3660  & 183\\
 4200  & 220\\
 4760  & 256\\
-5300  & 281\\		
+5300  & 281\\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -157,38 +121,13 @@ Die erhaltenen Werte sind in Tabellen \ref{tab:15}, \ref{tab:30} und \ref{tab:60
 
 
 
-In Abbildung \ref{fig:15}, \ref{fig:30} und \ref{fig:60} sind die Geschwindigkeiten gegen den Quotienten aus gemessener Frequenzänderung und dem Cosinus des jeweiligen 
+In Abbildung \ref{fig:15}, \ref{fig:30} und \ref{fig:60} sind die Geschwindigkeiten gegen den Quotienten aus gemessener Frequenzänderung und dem Cosinus des jeweiligen
 Dopplerwinkels aufgetragen.
 Zudem wird mit SciPy eine lineare Regression mit
 \begin{equation}
   f(x)= mx + b
 \end{equation}
 durgeführt.
-<<<<<<< HEAD
-\begin{figure}[H]
-  \centering
-  \includegraphics{build/15.pdf}
-  \caption{Frequenzverschiebung in Abhängigkeit der Geschwindigkeit.}
-  \label{fig:1mm}
-\end{figure}
-Die so erhaltenen Parameter sind in Tabelle\ref{tab:par1} aufgetragen.
-\begin{table}[H]
-    \caption{Parameter der regressions Rechnung.}
-    \label{tab:par1}
-    \centering
-    \begin{tabular}{S[table-format=2] S[table-format=4.8(8)e0] S[table-format=1.2(2)e0] }
-        \toprule
-        {$\theta/\si{\degree}$} & {$m/\si{\per\meter}$} & {$b\cdot10^-6/\si{\per\second}$}  \\
-        \midrule
-             15 &  2222.2222146\pm0.0000011 & 12.70\pm1.80 \\
-             30 &  2222.2222269\pm0.0000006 & -4.4\pm0.40 \\
-             60 &  2222.2222289\pm0.0000012 & -6.3\pm0.70 \\
-
-        \bottomrule
-    \end{tabular}
-\end{table}
-\noindent
-=======
 Es ergeben sich folgende Fit-Parameter:
 \begin{align*}
 	\alpha = \SI{15}{\degree} 	& \\
@@ -215,6 +154,6 @@ Es ergeben sich folgende Fit-Parameter:
 \end{align*}
 
 
->>>>>>> auswertungsteil 1 korregiert, soweit möglich. schriftbild optimiert
+
 
 \subsection{Bestimmung des Strömungsprofils}
