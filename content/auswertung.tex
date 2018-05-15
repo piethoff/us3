@@ -37,7 +37,7 @@ Die erhaltenen Werte der Messung sind in Tabellen \ref{tab:15}, \ref{tab:30} und
     \label{tab:15}
     \begin{tabular}{S[table-format=4.0] S[table-format=3.0]}
         \toprule
-        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu$} \\
+        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu/\si{\hertz}$} \\
         \midrule
         3120  & 110\\
         3660  & 171\\
@@ -65,7 +65,7 @@ Die erhaltenen Werte der Messung sind in Tabellen \ref{tab:15}, \ref{tab:30} und
     \label{tab:30}
     \begin{tabular}{S[table-format=4.0] S[table-format=3.0]}
         \toprule
-        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu$} \\
+        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu/\si{hertz}$} \\
         \midrule
 3120  & 220\\
 3660  & 287\\
@@ -92,7 +92,7 @@ Die erhaltenen Werte der Messung sind in Tabellen \ref{tab:15}, \ref{tab:30} und
     \label{tab:60}
     \begin{tabular}{S[table-format=4.0] S[table-format=3.0]}
         \toprule
-        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu$} \\
+        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu/\si{hertz}$} \\
         \midrule
 3120  & 305\\
 3660  & 433\\
@@ -169,6 +169,113 @@ Es ergeben sich folgende Fit-Parameter:
 \end{align*}
 
 
-
-
 \subsection{Bestimmung des Strömungsprofils}
+Der Winkel des Prismas ist im Folgenden immer $\alpha=\SI{15}{\degree}$.
+Die Messwerte für die Messung bei einer Motoreinstellung von $\SI{65}{\percent}$ sind in Tabelle \ref{ström1} aufgetragen.
+\begin{table}
+    \centering
+    \caption{Messwerte für eine Motorleistung von $\SI{65}{\percent}$.}
+    \label{ström1}
+    \begin{tabular}{S[table-format=2.1] S[table-format=3.0] S[table-format=2.1]}
+        \toprule
+        {Eindringtiefe$/\si{\micro\second}$} & {$\symup\Delta\nu/\si{\hertz}$} & {$\symup{\Delta\Delta}\nu/\si{\percent}$} \\
+        \midrule
+4    & 342  & 8.5 \\
+4.5  & 366  & 7.3 \\
+5    & 354  & 6.2 \\
+5.5  & 366  & 6.5 \\
+6    & 378  & 7.4 \\
+6.5  & 366  & 9.1 \\
+7    & 360  & 7.2 \\
+7.5  & 354  & 8.6 \\
+8    & 360  & 6.4 \\
+8.5  & 366  & 7.7 \\
+9    & 342  & 7.5 \\
+9.5  & 354  & 6.7 \\
+10   & 342  & 6.1 \\
+10.5 & 342  & 7.1 \\
+11   & 317  & 7.2 \\
+11.5 & 323  & 14.2 \\
+12   & 140  & 12.2 \\
+12.5 & 159  & 12.5 \\
+13   & 208  & 8.6 \\
+13.5 & 287  & 8.6 \\
+14   & 354  & 4.9 \\
+14.5 & 403  & 6.1 \\
+15   & 452  & 5.2 \\
+15.5 & 464  & 4.7 \\
+16   & 452  & 5.0 \\
+16.5 & 427  & 4.1 \\
+17   & 378  & 6.1 \\
+17.5 & 342  & 9.6 \\
+18   & 342  & 10.3 \\
+18.5 & 366  & 7.4 \\
+19   & 366  & 8.1 \\
+19.5 & 354  & 7.8 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\noindent
+Die Messwerte werden entsprechend der verschiedenen Schallgeschwindigkeiten in Prisma, $c_\text{P}=\frac{\SI{10}{\milli\meter}}{\SI{4}{\micro\second}}$\cite{us3}, 
+und Flüssigkeit, $c_\text{Fl}=\frac{\SI{6}{\milli\meter}}{\SI{4}{\micro\second}}$\cite{us3}, in Längen umgerechnet, 
+wobei das Prisma eine effektive Weglänge von $\SI{30.7}{\milli\meter}$\cite{us3} besitzt.
+Die berechneten Werte sind im Diagramm \ref{ström1fig} aufgetragen.
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/ström1.pdf}
+  \caption{Strömungsprofil für eine Motorleistung von $\SI{65}{\percent}$.}
+  \label{ström1fig}
+\end{figure}
+\noindent
+Die Messwerte der zweiten Messung, mit einer Motorleistung von $\SI{35}{\percent}$, sind in Tabelle \ref{ström2} aufgetragen.
+\begin{table}
+    \centering
+    \caption{Messwerte für eine Motorleistung von $\SI{35}{\percent}$.}
+    \label{ström2}
+    \begin{tabular}{S[table-format=2.1] S[table-format=3.0] S[table-format=2.1]}
+        \toprule
+        {Eindringtiefe$/\si{\micro\second}$} & {$\symup\Delta\nu/\si{\hertz}$} & {$\symup{\Delta\Delta}\nu/\si{\percent}$} \\
+        \midrule
+4    & 146  & 9.1 \\
+4.5  & 146  & 10.6 \\
+5    & 146  & 11.2 \\
+5.5  & 159  & 10.3 \\
+6    & 159  & 9.3 \\
+6.5  & 159  & 7.4 \\
+7    & 159  & 9.7 \\
+7.5  & 159  & 10.6 \\
+8    & 159  & 11.2 \\
+8.5  & 159  & 7.3 \\
+9    & 153  & 10.2 \\
+9.5  & 159  & 8.6 \\
+10   & 159  & 9.1 \\
+10.5 & 159  & 9.5 \\
+11   & 146  & 10.1 \\
+11.5 & 146  & 8.6 \\
+12   & 134  & 8.5 \\
+12.5 & 98   & 11.3 \\
+13   & 98   & 10.1 \\
+13.5 & 110  & 9.1 \\
+14   & 122  & 7.5 \\
+14.5 & 146  & 9.5 \\
+15   & 146  & 6.9 \\
+15.5 & 146  & 7.4 \\
+16   & 146  & 6.3 \\
+16.5 & 122  & 8.0 \\
+17   & 110  & 14.6 \\
+17.5 & 122  & 10.1 \\
+18   & 122  & 8.3 \\
+18.5 & 122  & 10.6 \\
+19   & 122  & 6.9 \\
+19.5 & 122  & 6.8 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\noindent
+Die Messwerte werden wie zuvor umgerechnet und sind im Diagramm \ref{ström2fig} aufgetragen.
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/ström2.pdf}
+  \caption{Strömungsprofil für eine Motorleistung von $\SI{35}{\percent}$.}
+  \label{ström2fig}
+\end{figure}

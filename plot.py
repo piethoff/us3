@@ -138,3 +138,49 @@ plt.ylabel(r"$\frac{\Delta\nu}{\cos\alpha}/\si{\hertz}$")
 plt.tight_layout()
 plt.savefig("build/60.pdf")
 plt.clf()
+
+
+
+
+
+
+data = np.genfromtxt("content/strömungsprofil.txt", unpack=True)
+data[0][:17] *= 10.0/4
+data[0][17:] = (data[0][17:] - 12.5)*6.0/4 + 12.5*10.0/4
+#print(data[0])
+data[1] = np.abs(data[1])
+
+c = 1800
+a = np.pi/2 - np.arcsin(np.sin(15) * c/2700)
+
+data[1] = data[1]*c/(4e6*np.cos(a))
+data[2] = data[2]*data[1]/100.0
+
+plt.errorbar(data[0], data[1], yerr = data[2], elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Messwerte")
+plt.xlabel(r"Eindringungstiefe$/\si{\milli\meter}$")
+plt.ylabel(r"$v/\si{\meter\per\second}$")
+plt.legend()
+plt.tight_layout()
+plt.savefig("build/ström1.pdf")
+plt.clf()
+
+
+data = np.genfromtxt("content/strömungsprofil2.txt", unpack=True)
+data[0][:17] *= 10.0/4
+data[0][17:] = (data[0][17:] - 12.5)*6.0/4 + 12.5*10.0/4
+#print(data[0])
+data[1] = np.abs(data[1])
+
+c = 1800
+a = np.pi/2 - np.arcsin(np.sin(15) * c/2700)
+
+data[1] = data[1]*c/(4e6*np.cos(a))
+data[2] = data[2]*data[1]/100.0
+
+plt.errorbar(data[0], data[1], yerr = data[2], elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Messwerte")
+plt.xlabel(r"Eindringungstiefe$/\si{\milli\meter}$")
+plt.ylabel(r"$v/\si{\meter\per\second}$")
+plt.legend()
+plt.tight_layout()
+plt.savefig("build/ström2.pdf")
+plt.clf()
