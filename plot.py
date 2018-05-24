@@ -9,178 +9,140 @@ import numpy as np
 from scipy.optimize import curve_fit
 from uncertainties import unumpy
 
-c_l = 1800
-c_p = 2700
+#plot1
 
-def f(x, A, B):
-    return A*x + B
-
-
-##15°##
-data1 = np.genfromtxt("content/15.txt", unpack=True)
-
-data2 = np.append(data1[0], data1[2])
-data2 = np.append(data2, data1[4])
-data = data2
-
-data2 = np.append(data1[1], data1[3])
-data2 = np.append(data2, data1[5])
-data = np.array([data, data2])
-data[1] = np.abs(data[1])
+data = np.genfromtxt('content/15.txt', unpack=True)
+data1 = np.genfromtxt('content/30.txt', unpack=True)
+data2 = np.genfromtxt('content/60.txt', unpack=True)
 
 
-#for i in range(data[0].size):
-#	print(data[0][i], data[1][i], sep="\t& ", end="\\\\\n")
+x = 1800*(data[1])/(2*2000000*np.cos(80.06))
+y = data[1]/np.cos(80.06)
 
-data[1] /= np.cos(np.pi/2 - np.arcsin(np.sin(2*np.pi/360 * 15) * c_l/c_p))
+s =(-1)*1800*(data1[1])/(2*2000000*np.cos(70.53))
+t =(-1)*data1[1]/np.cos(70.53)
 
-print("15°:\n")
-for i in range(0,3):
-	plt.plot(data[0][5*i:5*(i+1)], data[1][5*i:5*(i+1)], ".", label="Messwerte")
-	params, covar = curve_fit(f, data[0][5*i:5*(i+1)], data[1][5*i:5*(i+1)])
-	uparams = unumpy.uarray(params, np.sqrt(np.diag(covar)))
-	print(i+1, "-tes Rohr:", sep="")
-	for j in range(0, len(uparams)):
-		print(chr(ord('A') + j), "=" , uparams[j])
-	print()
-	lin = np.linspace(data[0][5*i], data[0][5*(i+1)-1], 10)
-	plt.plot(lin, f(lin, *params), color="xkcd:orange", label="lin. Fit")
+q =1800*(data2[1])/(2*2000000*np.cos(54.74))
+r =data2[1]/np.cos(54.74)
 
-plt.legend()
-plt.xlabel("Strömungsgeschwindigkeit/RPM")
-plt.ylabel(r"$\frac{\Delta\nu}{\cos\alpha}/\si{\hertz}$")
+
+plt.xlabel(r'v$/\si{\meter\per\second}$')
+plt.ylabel(r'$\Delta \nu /\cos(\alpha)$')
+
+plt.grid(True, which='both')
+
+
+plt.plot(x, y, "x", color="xkcd:blue", label="Messwerte($15\si{\degree}$)")
+plt.plot(s, t, "x", color="xkcd:red", label="Messwerte($30\si{\degree}$)")
+plt.plot(q, r, "x", color="xkcd:green", label="Messwerte($60\si{\degree}$)")
+
 plt.tight_layout()
-plt.savefig("build/15.pdf")
+plt.legend()
+plt.savefig('build/15.pdf')
 plt.clf()
 
 
+#plot2
+data = np.genfromtxt('content/15.txt', unpack=True)
+data1 = np.genfromtxt('content/30.txt', unpack=True)
+data2 = np.genfromtxt('content/60.txt', unpack=True)
+
+
+x = 1800*(data[3])/(2*2000000*np.cos(80.06))
+y = data[3]/np.cos(80.06)
+
+s =(-1)*1800*(data1[3])/(2*2000000*np.cos(70.53))
+t =(-1)*data1[3]/np.cos(70.53)
+
+q =1800*(data2[3])/(2*2000000*np.cos(54.74))
+r =data2[3]/np.cos(54.74)
+
+
+plt.xlabel(r'v$/\si{\meter\per\second}$')
+plt.ylabel(r'$\Delta \nu /\cos(\alpha)$')
+
+plt.grid(True, which='both')
 
 
 
+plt.plot(x, y, "x", color="xkcd:blue", label="Messwerte($15\si{\degree}$)")
+plt.plot(s, t, "x", color="xkcd:red", label="Messwerte($30\si{\degree}$)")
+plt.plot(q, r, "x", color="xkcd:green", label="Messwerte($60\si{\degree}$)")
+
+plt.tight_layout()
+plt.legend()
+plt.savefig('build/30.pdf')
+plt.clf()
+#plot3
+
+data = np.genfromtxt('content/15.txt', unpack=True)
+data1 = np.genfromtxt('content/30.txt', unpack=True)
+data2 = np.genfromtxt('content/60.txt', unpack=True)
+
+
+x = 1800*(data[5])/(2*2000000*np.cos(80.06))
+y = data[5]/np.cos(80.06)
+
+s =(-1)*1800*(data1[5])/(2*2000000*np.cos(70.53))
+t =(-1)*data1[5]/np.cos(70.53)
+
+q =1800*(data2[5])/(2*2000000*np.cos(54.74))
+r =data2[5]/np.cos(54.74)
+
+
+plt.xlabel(r'v$/\si{\meter\per\second}$')
+plt.ylabel(r'$\Delta \nu /\cos(\alpha)$')
+
+plt.grid(True, which='both')
 
 
 
-##30°##
-data1 = np.genfromtxt("content/30.txt", unpack=True)
+plt.plot(x, y, "x", color="xkcd:blue", label="Messwerte($15\si{\degree}$)")
+plt.plot(s, t, "x", color="xkcd:red", label="Messwerte($30\si{\degree}$)")
+plt.plot(q, r, "x", color="xkcd:green", label="Messwerte($60\si{\degree}$)")
 
-data2 = np.append(data1[0], data1[2])
-data2 = np.append(data2, data1[4])
-data = data2
+plt.tight_layout()
+plt.legend()
+plt.savefig('build/60.pdf')
+plt.clf()
+strom = np.genfromtxt("content/strömungsprofil.txt", unpack=True)
 
-data2 = np.append(data1[1], data1[3])
-data2 = np.append(data2, data1[5])
-data = np.array([data, data2])
-data[1] = np.abs(data[1])
+x = strom[0]
+y1 = 1800*(strom[1])/(2*2000000*np.cos(80.06))
 
+y2 = strom[2]
 
-#for i in range(data[0].size):
-#	print(data[0][i], data[1][i], sep="\t& ", end="\\\\\n")
+fig, ax1 = plt.subplots()
 
-data[1] /= np.cos(np.pi/2 - np.arcsin(np.sin(2*np.pi/360 * 30) * c_l/c_p))
-
-print("30°:\n")
-for i in range(0,3):
-	plt.plot(data[0][5*i:5*(i+1)], data[1][5*i:5*(i+1)], ".", label="Messwerte")
-	params, covar = curve_fit(f, data[0][5*i:5*(i+1)], data[1][5*i:5*(i+1)])
-	uparams = unumpy.uarray(params, np.sqrt(np.diag(covar)))
-	print(i+1, "-tes Rohr:", sep="")
-	for j in range(0, len(uparams)):
-		print(chr(ord('A') + j), "=" , uparams[j])
-	print()
-	lin = np.linspace(data[0][5*i], data[0][5*(i+1)-1], 10)
-	plt.plot(lin, f(lin, *params), color="xkcd:orange", label="lin. Fit")
+ax2 = ax1.twinx()
+ax1.plot(x, y1, 'g.')
+ax2.plot(x, y2, 'b.')
 
 plt.legend()
-plt.xlabel("Strömungsgeschwindigkeit/RPM")
-plt.ylabel(r"$\frac{\Delta\nu}{\cos\alpha}/\si{\hertz}$")
+ax1.set_xlabel("Eindringunstiefe/\si{\micro\second}")
+ax1.set_ylabel(r"$v/\si{\meter\per\second}$", color='g')
+ax2.set_ylabel("\sigma/\si{\percent}", color='b')
 plt.tight_layout()
-plt.savefig("build/30.pdf")
+plt.savefig("build/strom1.pdf")
 plt.clf()
 
+strom1 = np.genfromtxt("content/strömungsprofil2.txt", unpack=True)
 
+x1 = strom1[0]
+y3= 1800*(strom1[1])/(2*2000000*np.cos(80.06))
 
+y4 = strom1[2]
 
+fig, ax1 = plt.subplots()
 
-
-##60°##
-data1 = np.genfromtxt("content/60.txt", unpack=True)
-
-data2 = np.append(data1[0], data1[2])
-data2 = np.append(data2, data1[4])
-data = data2
-
-data2 = np.append(data1[1], data1[3])
-data2 = np.append(data2, data1[5])
-data = np.array([data, data2])
-data[1] = np.abs(data[1])
-
-
-#for i in range(data[0].size):
-#	print(data[0][i], data[1][i], sep="\t& ", end="\\\\\n")
-
-data[1] /= np.cos(np.pi/2 - np.arcsin(np.sin(2*np.pi/360 * 60) * c_l/c_p))
-
-print("60°:\n")
-for i in range(0,3):
-	plt.plot(data[0][5*i:5*(i+1)], data[1][5*i:5*(i+1)], ".", label="Messwerte")
-	params, covar = curve_fit(f, data[0][5*i:5*(i+1)], data[1][5*i:5*(i+1)])
-	uparams = unumpy.uarray(params, np.sqrt(np.diag(covar)))
-	print(i+1, "-tes Rohr:", sep="")
-	for j in range(0, len(uparams)):
-		print(chr(ord('A') + j), "=" , uparams[j])
-	print()
-	lin = np.linspace(data[0][5*i], data[0][5*(i+1)-1], 10)
-	plt.plot(lin, f(lin, *params), color="xkcd:orange", label="lin. Fit")
+ax2 = ax1.twinx()
+ax1.plot(x1, y3, 'g.')
+ax2.plot(x1, y4, 'b.')
 
 plt.legend()
-plt.xlabel("Strömungsgeschwindigkeit/RPM")
-plt.ylabel(r"$\frac{\Delta\nu}{\cos\alpha}/\si{\hertz}$")
+ax1.set_xlabel("Eindringunstiefe/\si{\micro\second}")
+ax1.set_ylabel(r"$v/\si{\meter\per\second}$", color='g')
+ax2.set_ylabel("\sigma/\si{\percent}", color='b')
 plt.tight_layout()
-plt.savefig("build/60.pdf")
-plt.clf()
-
-
-
-
-
-
-data = np.genfromtxt("content/strömungsprofil.txt", unpack=True)
-data[0][:17] *= 10.0/4
-data[0][17:] = (data[0][17:] - 12.5)*6.0/4 + 12.5*10.0/4
-#print(data[0])
-data[1] = np.abs(data[1])
-
-c = 1800
-a = np.pi/2 - np.arcsin(np.sin(15) * c/2700)
-
-data[1] = data[1]*c/(4e6*np.cos(a))
-data[2] = data[2]*data[1]/100.0
-
-plt.errorbar(data[0], data[1], yerr = data[2], elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Messwerte")
-plt.xlabel(r"Eindringungstiefe$/\si{\milli\meter}$")
-plt.ylabel(r"$v/\si{\meter\per\second}$")
-plt.legend()
-plt.tight_layout()
-plt.savefig("build/ström1.pdf")
-plt.clf()
-
-
-data = np.genfromtxt("content/strömungsprofil2.txt", unpack=True)
-data[0][:17] *= 10.0/4
-data[0][17:] = (data[0][17:] - 12.5)*6.0/4 + 12.5*10.0/4
-#print(data[0])
-data[1] = np.abs(data[1])
-
-c = 1800
-a = np.pi/2 - np.arcsin(np.sin(15) * c/2700)
-
-data[1] = data[1]*c/(4e6*np.cos(a))
-data[2] = data[2]*data[1]/100.0
-
-plt.errorbar(data[0], data[1], yerr = data[2], elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Messwerte")
-plt.xlabel(r"Eindringungstiefe$/\si{\milli\meter}$")
-plt.ylabel(r"$v/\si{\meter\per\second}$")
-plt.legend()
-plt.tight_layout()
-plt.savefig("build/ström2.pdf")
+plt.savefig("build/strom2.pdf")
 plt.clf()
