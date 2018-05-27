@@ -38,18 +38,18 @@ berechnet.
     \label{tab:15}
     \begin{tabular}{S[table-format=4.0] S[table-format=3.0] S[table-format=1.2] S[table-format=2.0]}
         \toprule
-        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu/\si{\hertz}$} & {$v/\si{\meter\per\second}$} & {Innendurchmesser$/\si{\milli\meter}$} \\
+        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu/\si{\hertz}$} & {$v/\si[per-mode=reciprocal]{\meter\per\second}$} & {Innendurchmesser$/\si{\milli\meter}$} \\
         \midrule
-        3120  & 110 & 0.28 & 10\\
-        3660  & 171 & 0.45 & 10\\
-        4200  & 208 & 0.54 & 10\\
-        4750  & 220 & 0.57 & 10\\
-        5290  & 220 & 0.57 & 10\\
         3110  & 256 & 0.67 & 7\\
         3650  & 293 & 0.76 & 7\\
         4180  & 391 & 1.02 & 7\\
         4750  & 439 & 1.14 & 7\\
         5300  & 525 & 1.37 & 7\\
+        3120  & 110 & 0.28 & 10\\
+        3660  & 171 & 0.45 & 10\\
+        4200  & 208 & 0.54 & 10\\
+        4750  & 220 & 0.57 & 10\\
+        5290  & 220 & 0.57 & 10\\
         3110  & 73 & 0.19 & 16\\
         3660  & 85 & 0.22 & 16\\
         4200  & 98 & 0.26 & 16\\
@@ -66,18 +66,18 @@ berechnet.
     \label{tab:30}
     \begin{tabular}{S[table-format=4.0] S[table-format=3.0] S[table-format=1.2] S[table-format=2.0]}
         \toprule
-        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu/\si{hertz}$}  & {$v/\si{\meter\per\second}$} & {Innendurchmesser$/\si{\milli\meter}$}\\
+        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu/\si{\hertz}$}  & {$v/\si[per-mode=reciprocal]{\meter\per\second}$} & {Innendurchmesser$/\si{\milli\meter}$}\\
         \midrule
-3120  & 220 & 0.30 & 10\\
-3660  & 287 & 0.39 & 10\\
-4200  & 305 & 0.41 & 10\\
-4750  & 385 & 0.52 & 10\\
-5290  & 385 & 0.52 & 10\\
 3110  & 415 & 0.56 & 7\\
 3650  & 458 & 0.62 & 7\\
 4180  & 623 & 0.84 & 7\\
 4750  & 580 & 0.78 & 7\\
 5300  & 830 & 1.12 & 7\\
+3120  & 220 & 0.30 & 10\\
+3660  & 287 & 0.39 & 10\\
+4200  & 305 & 0.41 & 10\\
+4750  & 385 & 0.52 & 10\\
+5290  & 385 & 0.52 & 10\\
 3110  & 92 & 0.12 & 16\\
 3660  & 122 & 0.16 & 16\\
 4200  & 134 & 0.18 & 16\\
@@ -91,20 +91,20 @@ berechnet.
     \centering
     \caption{Messwerte für einen Winkel von $\alpha = \SI{60}{\degree}$.}
     \label{tab:60}
-    \begin{tabular}{S[table-format=4.0] S[table-format=3.0] S[table-format=1.2] S[table-format=2.0]}
+    \begin{tabular}{S[table-format=4.0] S[table-format=4.0] S[table-format=1.2] S[table-format=2.0]}
         \toprule
-        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu/\si{hertz}$} & {$v/\si{\meter\per\second}$} & {Innendurchmesser$/\si{\milli\meter}$} \\
+        {Strömungsgeschwindigkeit/RPM} & {$\symup\Delta\nu/\si{\hertz}$} & {$v/\si[per-mode=reciprocal]{\meter\per\second}$} & {Innendurchmesser$/\si{\milli\meter}$} \\
         \midrule
-3120  & 305 & 0.23 & 10\\
-3660  & 433 & 0.34 & 10\\
-4200  & 531 & 0.41 & 10\\
-4750  & 433 & 0.34 & 10\\
-5290  & 647 & 0.50 & 10\\
 3110  & 525 & 0.41 & 7\\
 3650  & 702 & 0.55 & 7\\
 4180  & 830 & 0.65 & 7\\
 4750  & 1001 & 0.78 & 7\\
 5300  & 1172 & 0.91 & 7\\
+3120  & 305 & 0.23 & 10\\
+3660  & 433 & 0.34 & 10\\
+4200  & 531 & 0.41 & 10\\
+4750  & 433 & 0.34 & 10\\
+5290  & 647 & 0.50 & 10\\
 3110  & 134 & 0.10 & 16\\
 3660  & 183 & 0.14 & 16\\
 4200  & 220 & 0.17 & 16\\
@@ -116,16 +116,16 @@ berechnet.
 
 \begin{figure}[H]
   \centering
-  \includegraphics{build/15.pdf}
-  \caption{Geschwindigkeit aufgetragen gegen die Frequenzverschiebung geteilt durch die entsprechenden Dopplerwinkel für einen Rohrdurchmesser von $d= 10\si{\milli\meter}$.}
-  \label{fig:15}
+  \includegraphics{build/30.pdf}
+  \caption{Geschwindigkeit aufgetragen gegen die Frequenzverschiebung geteilt durch die entsprechenden Dopplerwinkel für einen Rohrdurchmesser von $d= 7\si{\milli\meter}$.}
+  \label{fig:30}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics{build/30.pdf}
-  \caption{Geschwindigkeit aufgetragen gegen die Frequenzverschiebung geteilt durch die entsprechenden Dopplerwinkel für einen Rohrdurchmesser von $d= 7\si{\milli\meter}$.}
-  \label{fig:30}
+  \includegraphics{build/15.pdf}
+  \caption{Geschwindigkeit aufgetragen gegen die Frequenzverschiebung geteilt durch die entsprechenden Dopplerwinkel für einen Rohrdurchmesser von $d= 10\si{\milli\meter}$.}
+  \label{fig:15}
 \end{figure}
 
 \begin{figure}[H]
@@ -172,7 +172,7 @@ Dopplerwinkels aufgetragen.
 
 \subsection{Bestimmung des Strömungsprofils}
 Der Winkel des Prismas ist im Folgenden immer $\alpha=\SI{15}{\degree}$.
-Die Messwerte für die Messung bei einer Motoreinstellung von $\SI{65}{\percent}$ sind in Tabelle \ref{ström1} aufgetragen.
+Die Messwerte für die Messung bei einer Motoreinstellung von $\SI{65}{\percent}$ sind in Tabelle \ref{ström1} aufgetragen, wobei $\sigma$ die Steuintensität von $\symup\Delta\nu$ darstellt.
 \begin{table}
     \centering
     \caption{Messwerte für eine Motorleistung von $\SI{65}{\percent}$.}
@@ -204,6 +204,15 @@ Die Messwerte für die Messung bei einer Motoreinstellung von $\SI{65}{\percent}
 Die Messwerte werden entsprechend der verschiedenen Schallgeschwindigkeiten in Prisma, $c_\text{P}=\frac{\SI{10}{\milli\meter}}{\SI{4}{\micro\second}}$\cite{us3},
 und Flüssigkeit, $c_\text{Fl}=\frac{\SI{6}{\milli\meter}}{\SI{4}{\micro\second}}$\cite{us3}, in Längen umgerechnet,
 wobei das Prisma eine effektive Weglänge von $\SI{30.7}{\milli\meter}$\cite{us3} besitzt.
+Die tatsächliche Weglänge lässt sich somit bestimmen durch:
+\begin{equation}
+	\label{weglänge}
+	x = 
+	\begin{cases}
+		t\cdot c_\text{P}, & t \le \frac{\SI{30.7}{\milli\meter}\text{\cite{us3}}}{c_\text{P}} \\
+		t\cdot c_\text{Fl} + \SI{30.7}{\milli\meter}\text{\cite{us3}}\left(1-\frac{c_\text{Fl}}{c_\text{P}}\right), & t > \frac{\SI{30.7}{\milli\meter}\text{\cite{us3}}}{c_\text{P}}
+	\end{cases}
+\end{equation}
 Die berechneten Werte sind im Diagramm \ref{ström1fig} aufgetragen.
 \begin{figure}[H]
   \centering
@@ -212,31 +221,31 @@ Die berechneten Werte sind im Diagramm \ref{ström1fig} aufgetragen.
   \label{ström1fig}
 \end{figure}
 \noindent
-Die Messwerte der zweiten Messung, mit einer Motorleistung von $\SI{35}{\percent}$, sind in Tabelle \ref{ström2} aufgetragen.
-\begin{table}
+Die Messwerte der zweiten Messung, mit einer Motorleistung von $\SI{35}{\percent}$, sind in Tabelle \ref{ström2} aufgetragen, wobei $\sigma$ die Steuintensität von $\symup\Delta\nu$ darstellt.
+\begin{table}[H]
     \centering
     \caption{Messwerte für eine Motorleistung von $\SI{35}{\percent}$.}
     \label{ström2}
     \begin{tabular}{S[table-format=2.1] S[table-format=3.0] S[table-format=2.1]}
         \toprule
-        {Eindringtiefe$/\si{\micro\second}$} & {$\symup\Delta\nu/\si{\hertz}$} & {$\symup{\Delta\Delta}\nu/\si{\percent}$} \\
+        {Eindringtiefe$/\si{\micro\second}$} & {$\symup\Delta\nu/\si{\hertz}$} & {$\sigma/\si{\percent}$} \\
         \midrule
 12.0   & 134  & 8.5 \\
-12.5 & 98   & 11.3 \\
+12.5   & 98   & 11.3 \\
 13.0   & 98   & 10.1 \\
-13.5 & 110  & 9.1 \\
+13.5   & 110  & 9.1 \\
 14.0   & 122  & 7.5 \\
-14.5 & 146  & 9.5 \\
+14.5   & 146  & 9.5 \\
 15.0   & 146  & 6.9 \\
-15.5 & 146  & 7.4 \\
+15.5   & 146  & 7.4 \\
 16.0   & 146  & 6.3 \\
-16.5 & 122  & 8.0 \\
+16.5   & 122  & 8.0 \\
 17.0   & 110  & 14.6 \\
-17.5 & 122  & 10.1 \\
+17.5   & 122  & 10.1 \\
 18.0   & 122  & 8.3 \\
-18.5 & 122  & 10.6 \\
+18.5   & 122  & 10.6 \\
 19.0   & 122  & 6.9 \\
-19.5 & 122  & 6.8 \\
+19.5   & 122  & 6.8 \\
         \bottomrule
     \end{tabular}
 \end{table}
