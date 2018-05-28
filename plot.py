@@ -131,19 +131,30 @@ y1 = np.abs(1800*(strom[1])/(2*2000000*np.cos(2*np.pi/360*80.06)))
 
 y2 = np.abs(strom[2])
 
-fig, ax1 = plt.subplots()
+#fig, ax1 = plt.subplots()
 
-ax2 = ax1.twinx()
-ax1.plot(x, y1, 'g.', label="Messwerte für die Geschwindigkeit")
-ax2.plot(x, y2, 'b.', label="Messwerte für die Streuintensität")
+#ax2 = ax1.twinx()
 
-#plt.legend()
-ax1.set_xlabel("Eindringungstiefe/\si{\micro\second}")
-ax1.set_ylabel(r"$v/\si{\meter\per\second}$", color='g')
-ax2.set_ylabel("\sigma/\si{\percent}", color='b')
+plt.plot(x, y1, 'g.', label="Messwerte für die Geschwindigkeit")
+
+
+plt.legend()
+plt.xlabel("Eindringungstiefe/\si{\micro\second}")
+plt.ylabel(r"$v/\si{\meter\per\second}$")
+
 plt.tight_layout()
 plt.savefig("build/strom1.pdf")
 plt.clf()
+
+
+plt.plot(x, y2, 'b.', label="Messwerte für die Streuintensität")
+plt.legend()
+plt.xlabel("Eindringungstiefe/\si{\micro\second}")
+plt.ylabel("\sigma/\si{\percent}")
+plt.tight_layout()
+plt.savefig("build/streu1.pdf")
+plt.clf()
+
 
 strom1 = np.genfromtxt("content/strömungsprofil2.txt", unpack=True)
 
@@ -153,16 +164,24 @@ y3= np.abs(1800*(strom1[1])/(2*2000000*np.cos(2*np.pi/360*80.06)))
 
 y4 = np.abs(strom1[2])
 
-fig, ax1 = plt.subplots()
+#fig, ax1 = plt.subplots()
 
-ax2 = ax1.twinx()
-ax1.plot(x1, y3, 'g.', label="Messwerte für die Geschwindigkeit")
-ax2.plot(x1, y4, 'b.', label="Messwerte für die Streuintensität")
+#ax2 = ax1.twinx()
+plt.plot(x1, y3, 'g.', label="Messwerte für die Geschwindigkeit")
 
-#plt.legend()
-ax1.set_xlabel("Eindringungstiefe/\si{\milli\meter}")
-ax1.set_ylabel(r"$v/\si{\meter\per\second}$", color='g')
-ax2.set_ylabel("\sigma/\si{\percent}", color='b')
+
+plt.legend()
+plt.xlabel("Eindringungstiefe/\si{\milli\meter}")
+plt.ylabel(r"$v/\si{\meter\per\second}$")
+
 plt.tight_layout()
 plt.savefig("build/strom2.pdf")
+plt.clf()
+
+plt.plot(x1, y4, 'b.', label="Messwerte für die Streuintensität")
+plt.xlabel("Eindringungstiefe/\si{\milli\meter}")
+plt.ylabel("\sigma/\si{\percent}")
+plt.legend()
+plt.tight_layout()
+plt.savefig("build/streu2.pdf")
 plt.clf()
