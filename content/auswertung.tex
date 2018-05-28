@@ -7,6 +7,7 @@ Die Dopplerwinkel werden wie folgt berechnet:
 \begin{equation}
   \alpha = 90\si{\degree} - \arcsin\left(\sin(\theta )\cdot \frac{c_L}{c_P}\right)
 \end{equation}
+Hier ist $c_\text{Fl} = \SI{1800}{\meter\per\second}$\cite{us3} und $c_\text{P} = \SI{2700}{\meter\per\second}$\cite{us3}.
 Die erhaltenen Werte sind in Tabelle \ref{tab:dopp} eingetragen.
 \begin{table}[H]
     \caption{Dopplerwinkel.}
@@ -19,19 +20,16 @@ Die erhaltenen Werte sind in Tabelle \ref{tab:dopp} eingetragen.
              15 & 80.06 \\
              30 & 70.53\\
              60 & 54.74\\
-
         \bottomrule
     \end{tabular}
 \end{table}
 \noindent Die erhaltenen Werte der Messung sind in Tabellen \ref{tab:15}, \ref{tab:30} und \ref{tab:60} eingetragen.
-Die Strömungsgeschwindigkeit wird nach Gleichung\eqref{eq:geschw} mit
+Die Strömungsgeschwindigkeit wird nach Gleichung \eqref{eq:geschw} mit
 \begin{equation}
- v = \frac{c  \symup\Delta\nu}{2\nu_0 \cos \alpha}
+ v = \frac{c_\text{Fl}  \symup\Delta\nu}{2\nu_0 \cos \alpha}
 \end{equation}
-berechnet.
+berechnet, wobei gilt $\nu_0 = \SI{2}{\mega\hertz}$ und $c_\text{Fl} = \SI{1800}{\meter\per\second}$\cite{us3}.
 %tabelle
-
-
 \begin{table}
     \centering
     \caption{Messwerte für einen Winkel von $\alpha = \SI{15}{\degree}$.}
@@ -137,7 +135,7 @@ berechnet.
 
 
 
-\noindent In Abbildung \ref{fig:15}, \ref{fig:30} und \ref{fig:60} sind die Geschwindigkeiten gegen den Quotienten aus gemessener Frequenzänderung und dem Cosinus des jeweiligen
+\noindent In Abbildung \ref{fig:30}, \ref{fig:15} und \ref{fig:60} sind die Geschwindigkeiten gegen den Quotienten aus gemessener Frequenzänderung und dem Cosinus des jeweiligen
 Dopplerwinkels aufgetragen.
 %Zudem wird mit SciPy eine lineare Regression mit
 %\begin{equation}
