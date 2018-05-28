@@ -139,7 +139,7 @@ plt.plot(x, y1, 'g.', label="Messwerte für die Geschwindigkeit")
 
 
 plt.legend()
-plt.xlabel("Eindringungstiefe/\si{\micro\second}")
+plt.xlabel("Eindringungstiefe/\si{\milli\meter}")
 plt.ylabel(r"$v/\si{\meter\per\second}$")
 
 plt.tight_layout()
@@ -149,7 +149,7 @@ plt.clf()
 
 plt.plot(x, y2, 'b.', label="Messwerte für die Streuintensität")
 plt.legend()
-plt.xlabel("Eindringungstiefe/\si{\micro\second}")
+plt.xlabel("Eindringungstiefe/\si{\milli\meter}")
 plt.ylabel("\sigma/\si{\percent}")
 plt.tight_layout()
 plt.savefig("build/streu1.pdf")

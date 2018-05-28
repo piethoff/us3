@@ -177,26 +177,26 @@ Die Messwerte für die Messung bei einer Motoreinstellung von $\SI{65}{\percent}
     \centering
     \caption{Messwerte für eine Motorleistung von $\SI{65}{\percent}$.}
     \label{ström1}
-    \begin{tabular}{S[table-format=2.1] S[table-format=3.0] S[table-format=1.2] S[table-format=2.1]}
+    \begin{tabular}{S[table-format=2.1] S[table-format=2.2] S[table-format=3.0] S[table-format=1.2] S[table-format=2.1]}
         \toprule
-        {Eindringtiefe$/\si{\micro\second}$} & {$\symup\Delta\nu/\si{\hertz}$} & {$v/\si[per-mode=reciprocal]{\meter\per\second}$} & {$\symup\sigma/\si{\percent}$} \\
+        {Eindringtiefe$/\si{\micro\second}$} &{Eindringtiefe$/\si{\milli\meter}$}& {$\symup\Delta\nu/\si{\hertz}$} & {$v/\si[per-mode=reciprocal]{\meter\per\second}$} & {$\symup\sigma/\si{\percent}$} \\
         \midrule
-12.0   & 140  & 0.37 & 12.2 \\
-12.5   & 159  & 0.42 & 12.5 \\
-13.0   & 208  & 0.55 & 8.6 \\
-13.5   & 287  & 0.76 & 8.6 \\
-14.0   & 354  & 0.94 & 4.9 \\
-14.5   & 403  & 1.07 & 6.1 \\
-15.0   & 452  & 1.20 & 5.2\\
-15.5   & 464  & 1.23 & 4.7 \\
-16.0   & 452  & 1.20 & 5.0 \\
-16.5   & 427  & 1.13 &  4.1 \\
-17.0   & 378  & 1.00 & 6.1 \\
-17.5   & 342  & 0.91 & 9.6 \\
-18.0   & 342  & 0.91 & 10.3 \\
-18.5   & 366  & 0.97 & 7.4 \\
-19.0   & 366  & 0.97 & 8.1 \\
-19.5   & 354  & 0.94 & 7.8 \\
+12.0 & 30.28 & 140  & 0.37 & 12.2 \\
+12.5 & 31.03  & 159  & 0.42 & 12.5 \\
+13.0 & 31.78  & 208  & 0.55 & 8.6 \\
+13.5 & 32.53  & 287  & 0.76 & 8.6 \\
+14.0 & 33.28  & 354  & 0.94 & 4.9 \\
+14.5 & 34.03  & 403  & 1.07 & 6.1 \\
+15.0 & 34.78 & 452  & 1.20 & 5.2\\
+15.5 & 35.53  & 464  & 1.23 & 4.7 \\
+16.0 & 36.28 & 452  & 1.20 & 5.0 \\
+16.5 & 37.03  & 427  & 1.13 &  4.1 \\
+17.0 & 37.78 & 378  & 1.00 & 6.1 \\
+17.5 & 38.53  & 342  & 0.91 & 9.6 \\
+18.0 & 39.28  & 342  & 0.91 & 10.3 \\
+18.5 & 40.03  & 366  & 0.97 & 7.4 \\
+19.0 & 40.78  & 366  & 0.97 & 8.1 \\
+19.5 & 41.53  & 354  & 0.94 & 7.8 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -214,6 +214,8 @@ Die tatsächliche Weglänge lässt sich somit bestimmen durch:
 	\end{cases}
 \end{equation}
 Die berechneten Werte sind im Abbildung \ref{ström1fig} und Abbildung \ref{streu1fig} aufgetragen.
+Dabei ist zu beachten, dass Messwerte für eine Endringtiefe über $40\si{\milli\meter}$ für die Auswertung vernachlässigt werden.
+Dies wird gemacht, weil das Strömungsrohr einen Durchmesser von $d=10\si{\milli\meter}$ besitzt.
 \begin{figure}[H]
   \centering
   \includegraphics{build/strom1.pdf}
@@ -227,32 +229,35 @@ Die berechneten Werte sind im Abbildung \ref{ström1fig} und Abbildung \ref{stre
   \label{streu1fig}
 \end{figure}
 
-\noindent
+\noindent Bei beiden Größen ist ein parabelförmiger Verlauf zu erkennen.
+Die Parabel der Abweichung ist nach oben und die Parabel der Geschwindigkeit nach unten geöffnet.
+Die Geschwindigkeit ist in der Mitte des Rohres am größten und nimmt zu den Seiten ab.
+Die Abweichung nimmt bei großen Geschwindigkeiten ab.
 Die Messwerte der zweiten Messung, mit einer Motorleistung von $\SI{35}{\percent}$, sind in Tabelle \ref{ström2} aufgetragen, wobei $\sigma$ die Steuintensität von $\symup\Delta\nu$ darstellt.
 \begin{table}[H]
     \centering
     \caption{Messwerte für eine Motorleistung von $\SI{35}{\percent}$.}
     \label{ström2}
-    \begin{tabular}{S[table-format=2.1] S[table-format=3.0] S[table-format=1.2] S[table-format=2.1]}
+    \begin{tabular}{S[table-format=2.1] S[table-format=2.2] S[table-format=3.0] S[table-format=1.2] S[table-format=2.1]}
         \toprule
-        {Eindringtiefe$/\si{\micro\second}$} & {$\symup\Delta\nu/\si{\hertz}$} & {$v/\si[per-mode=reciprocal]{\meter\per\second}$} & {$\sigma/\si{\percent}$} \\
+        {Eindringtiefe$/\si{\micro\second}$} &{Eindringtiefe$/\si{\milli\meter}$}& {$\symup\Delta\nu/\si{\hertz}$} & {$v/\si[per-mode=reciprocal]{\meter\per\second}$} & {$\sigma/\si{\percent}$} \\
         \midrule
-12.0   & 134  & 0.35 & 8.5 \\
-12.5   & 98   & 0.26 &  11.3 \\
-13.0   & 98   & 0.26 & 10.1 \\
-13.5   & 110  & 0.29 & 9.1 \\
-14.0   & 122  & 0.32 & 7.5 \\
-14.5   & 146  & 0.39 & 9.5 \\
-15.0   & 146  & 0.39 & 6.9 \\
-15.5   & 146  & 0.39 & 7.4 \\
-16.0   & 146  & 0.39 & 6.3 \\
-16.5   & 122  & 0.32 & 8.0 \\
-17.0   & 110  & 0.29 & 14.6 \\
-17.5   & 122  & 0.32 & 10.1 \\
-18.0   & 122  & 0.32 & 8.3 \\
-18.5   & 122  & 0.32 & 10.6 \\
-19.0   & 122  & 0.32 & 6.9 \\
-19.5   & 122  & 0.32 & 6.8 \\
+12.0 & 30.28 & 134  & 0.35 & 8.5 \\
+12.5 & 31.03  & 98   & 0.26 &  11.3 \\
+13.0 & 31.78  & 98   & 0.26 & 10.1 \\
+13.5 & 32.53  & 110  & 0.29 & 9.1 \\
+14.0 & 33.28  & 122  & 0.32 & 7.5 \\
+14.5 & 34.03  & 146  & 0.39 & 9.5 \\
+15.0 & 34.78  & 146  & 0.39 & 6.9 \\
+15.5 & 35.53  & 146  & 0.39 & 7.4 \\
+16.0 & 36.28  & 146  & 0.39 & 6.3 \\
+16.5 & 37.03  & 122  & 0.32 & 8.0 \\
+17.0 & 37.78  & 110  & 0.29 & 14.6 \\
+17.5 & 38.53  & 122  & 0.32 & 10.1 \\
+18.0 & 39.28  & 122  & 0.32 & 8.3 \\
+18.5 & 40.03  & 122  & 0.32 & 10.6 \\
+19.0 & 40.78  & 122  & 0.32 & 6.9 \\
+19.5 & 41.53  & 122  & 0.32 & 6.8 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -270,3 +275,5 @@ Die Messwerte werden wie zuvor umgerechnet und sind im Abbildung \ref{ström2fig
   \caption{Strömungsprofil für eine Motorleistung von $\SI{35}{\percent}$.}
   \label{streu2fig}
 \end{figure}
+\noindent Ein ähnlicher Verlauf zu Abbildung \ref{ström1fig} und Abbildung \ref{streu1fig} ist zu beobachten.
+Der Parabelverlauf ist in Abbildung \ref{ström2fig} und Abbildung \ref{streu2fig} nicht so deutlich zu erkennen.
